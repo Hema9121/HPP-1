@@ -3,4 +3,5 @@ Flask
 pandas
 matplotlib
 gunicorn
+scikit-learn
 -e .
