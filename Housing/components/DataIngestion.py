@@ -61,11 +61,14 @@ class DataIngestion:
     def split_data_as_train_test(self)->DataIngestionArtifact:
 
         try:
+            #ingested_dir=os.path.dirname(self.data_ingestion_config.ingested_test_dir)
+            #os.makedirs(ingested_dir,exist_ok=True)
             raw_data_dir=self.data_ingestion_config.raw_data_dir
             file_name=os.listdir(raw_data_dir)[0]
 
             raw_housing_file_path=os.path.join(raw_data_dir,file_name)
 
+            logging.info(f"Reading csv file: [{raw_housing_file_path}]")
             housing_data=pd.read_csv(raw_housing_file_path)
             housing_data["income_cat"] = pd.cut(
                 housing_data["median_income"],

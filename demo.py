@@ -3,6 +3,7 @@ from Housing.exception import HousingException
 from Housing.logger import logging
 import sys
 
+
 def main():
     try:
         logging.info("testing data ingestion")

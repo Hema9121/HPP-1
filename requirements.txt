@@ -4,4 +4,5 @@ pandas
 matplotlib
 gunicorn
 scikit-learn
+evidently
 -e .
