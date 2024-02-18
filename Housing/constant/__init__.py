@@ -8,7 +8,7 @@ def get_current_time_stamp():
 CURRENT_TIME_STAMP=get_current_time_stamp()
 
 ROOT_DIR=os.getcwd()
-#print(root_dir)
+#print(ROOT_DIR)
 CONFIG_DIR="config"
 CONFIG_FILE_NAME="config.yaml"
 CONFIG_FILE_PATH=os.path.join(ROOT_DIR,CONFIG_DIR,CONFIG_FILE_NAME)
@@ -48,7 +48,7 @@ DATA_TRANSFORMATION_ADD_BEDROOM_PER_ROOM_KEY="add_bedroom_per_room"
 
 NUMERICAL_COLUMNS_KEY="numerical_columns"
 CATEGORICAL_COLUMNS_KEY="categorical_columns"
-TARGET_COLUMN_KEY="target_columns"
+TARGET_COLUMN_KEY="target_column"
 DATASET_SCHEMA_COLUMNS_KEY=  "columns"
 
 COLUMN_TOTAL_ROOMS_KEY = "total_rooms"

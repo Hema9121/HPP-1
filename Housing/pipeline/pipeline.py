@@ -33,22 +33,24 @@ class Pipeline:
         except Exception as e:
             raise HousingException(e,sys) from e
     
-    def start_data_transformation(self,data_validation_artifact:DataValidationArtifact,data_ingestion_artifact:DataIngestionArtifact)->DataTransformationArtifact:
+    def start_data_transformation(self,data_ingestion_artifact:DataIngestionArtifact,data_validation_artifact:DataValidationArtifact)-> DataTransformationArtifact:
         try:
-            data_transformation=DataTransformation(data_transformation_config=self.config.get_data_transformation_config,
+            data_transformation=DataTransformation(data_transformation_config=self.config.get_data_transformation_config(),
                                                    data_ingestion_artifact=data_ingestion_artifact,
-                                                   data_validation_artifact=data_validation_artifact)
+                                                   data_validation_artifact=data_validation_artifact
+                                                   )
             return data_transformation.initiate_data_transformation()
 
         except Exception as e:
             raise HousingException(e,sys) from e
-
+    
     def run_pipeline(self):
         try:
             data_ingestion_artifact=self.start_data_ingestion()
             data_validation_artifact=self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
             data_transformation_artifact=self.start_data_transformation(data_ingestion_artifact=data_ingestion_artifact,
                                                                         data_validation_artifact=data_validation_artifact)
+            #model_trainer_artifact = self.start_model_trainer(data_transformation_artifact=data_transformation_artifact)
 
 
         except Exception as e:
@@ -63,4 +65,5 @@ try:
 
 except Exception as e:
 raise HousingException(e,sys) from e
+
 """
