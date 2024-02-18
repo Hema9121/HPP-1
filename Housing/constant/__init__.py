@@ -55,3 +55,15 @@ COLUMN_TOTAL_ROOMS_KEY = "total_rooms"
 COLUMN_POPULATION_KEY = "population"
 COLUMN_HOUSEHOLDS_KEY = "households"
 COLUMN_TOTAL_BEDROOM_KEY = "total_bedrooms"
+
+
+#model trainer config
+MODEL_TRAINER_CONFIG_KEY="model_trainer_config"
+MODEL_TRAINER_ARTIDACT_DIR="MODEL TRAINER"
+MODEL_TRAINER_TRAINED_MODEL_DIR_KEY="trained_model_dir"
+MODEL_TRAINER_MODEL_FILE_NAME_KEY="model_file_name"
+MODEL_TRAINER_BASE_ACCURACY_KEY="base_accuracy"
+MODEL_TRAINER_MODEL_CONFIG_DIR_KEY="model_config_dir"
+MODEL_TRAINER_MODEL_CONFIG_FILE_NAME_KEY="model_config_file_name"
+
+#model evaluation config

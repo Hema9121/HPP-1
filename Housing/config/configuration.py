@@ -123,3 +123,25 @@ class Configuration():
 
         except Exception as e:
             raise HousingException(e,sys) from e
+        
+    def get_model_trainer_config(self)->ModelTrainerConfig:
+        try:
+            model_trainer_config=self.config_info[MODEL_TRAINER_CONFIG_KEY]
+            artifact_dir=self.training_pipeline_config.artifact_dir
+            model_trainer_artifact_dir=os.path.join(artifact_dir,MODEL_TRAINER_ARTIDACT_DIR,self.time_stamp)
+
+            base_accuracy=model_trainer_config[MODEL_TRAINER_BASE_ACCURACY_KEY]
+
+            model_file_path=os.path.join(model_trainer_artifact_dir,
+                                         model_trainer_config[MODEL_TRAINER_TRAINED_MODEL_DIR_KEY],
+                                         model_trainer_config[MODEL_TRAINER_MODEL_FILE_NAME_KEY])
+            model_config_file_path=os.path.join(model_trainer_config[MODEL_TRAINER_MODEL_CONFIG_DIR_KEY],
+                                                model_trainer_config[MODEL_TRAINER_MODEL_CONFIG_FILE_NAME_KEY])
+            model_trainer_config=ModelTrainerConfig(base_accuracy=base_accuracy,
+                                                      trained_model_file_path=model_file_path,
+                                                      model_config_file_path=model_config_file_path)
+            logging.info(f"model trainer config : {model_trainer_config}")
+            return model_trainer_config
+
+        except Exception as e:
+            raise HousingException(e,sys) from e
