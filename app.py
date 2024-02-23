@@ -8,7 +8,7 @@ from Housing.logger import logging
 from Housing.exception import HousingException
 import os, sys
 import json
-from Housing.config.configuration import Configuartion
+from Housing.config.configuration import Configuration
 from Housing.constant import CONFIG_DIR, get_current_time_stamp
 from Housing.pipeline.pipeline import Pipeline
 from Housing.entity.housing_predictor import HousingPredictor, HousingData
@@ -25,7 +25,7 @@ PIPELINE_DIR = os.path.join(ROOT_DIR, PIPELINE_FOLDER_NAME)
 MODEL_DIR = os.path.join(ROOT_DIR, SAVED_MODELS_DIR_NAME)
 
 
-from housing.logger import get_log_dataframe
+from Housing.logger import get_log_dataframe
 
 HOUSING_DATA_KEY = "housing_data"
 MEDIAN_HOUSING_VALUE_KEY = "median_house_value"
