@@ -2,7 +2,7 @@ from setuptools import setup,find_packages
 from typing import List
 
 PROJECT_NAME="HPP"
-VERSION="0.0.11"
+VERSION="0.0.24"
 AUTHOR="Hema Srinivasulu"
 DESRCIPTION="This is Machine Learning Project"
 

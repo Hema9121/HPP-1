@@ -1,6 +1,6 @@
 best_model:
   model_path: C:\Users\dshem\OneDrive\Desktop\projects\project-1\HPP-1\housing\artifact\MODEL
-    TRAINER\2024-02-23-14-52-25\trained_model\model.pkl
+    TRAINER\2024-02-23-16-42-11\trained_model\model.pkl
 history:
   2024-02-19-15-15-32:
     model_path: C:\Users\dshem\OneDrive\Desktop\projects\project-1\HPP-1\housing\artifact\MODEL
@@ -14,3 +14,6 @@ history:
   2024-02-23-14-52-25:
     model_path: C:\Users\dshem\OneDrive\Desktop\projects\project-1\HPP-1\housing\artifact\MODEL
       TRAINER\2024-02-19-15-20-00\trained_model\model.pkl
+  2024-02-23-16-42-11:
+    model_path: C:\Users\dshem\OneDrive\Desktop\projects\project-1\HPP-1\housing\artifact\MODEL
+      TRAINER\2024-02-23-14-52-25\trained_model\model.pkl
