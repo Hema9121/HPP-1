@@ -1,14 +1,18 @@
 from Housing.pipeline.pipeline import Pipeline
 from Housing.exception import HousingException
 from Housing.logger import logging
-import sys
+import sys,os
+from Housing.config.configuration import Configuration
+
 
 
 def main():
     try:
-        logging.info("testing data ingestion")
-        pipeline=Pipeline()
-        pipeline.run_pipeline()
+        config_path = os.path.join("config","config.yaml")
+        logging.info("testing")
+        pipeline=Pipeline(Configuration(config_file_path=config_path))
+        pipeline.start()
+        logging.info("testing completed")
     except Exception as e:
         raise HousingException(e,sys) from e
     
