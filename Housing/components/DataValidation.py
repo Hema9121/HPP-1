@@ -10,8 +10,14 @@ from Housing.config.configuration import Configuration
 
 import pandas as pd
 import json
-from evidently.model_profile import Profile
-from evidently.model_profile.sections import DataDriftProfileSection
+#
+from evidently.report import Report
+from evidently.metrics import *
+from evidently.metric_preset import DataDriftPreset
+
+#
+#from evidently.model_profile import Profile
+#from evidently.model_profile.sections import DataDriftProfileSection
 from evidently.dashboard import Dashboard
 from evidently.dashboard.tabs import DataDriftTab
 
@@ -86,10 +92,17 @@ class DataValidation:
 
     def get_save_data_drift_report(self):
         try:
-            profile=Profile(sections=[DataDriftProfileSection()])
+            train_df,test_df=self.get_train_test_data()
+            report = Report(metrics=[DataDriftPreset(),])
+
+            report.run(reference_data=train_df, current_data=test_df)
+            report.as_dict()
+            report=json.loads(report.json())
+
+            """profile=Profile(sections=[DataDriftProfileSection()])
             train_df,test_df=self.get_train_test_data()
             profile.calculate(train_df,test_df)
-            report=json.loads(profile.json())
+            report=json.loads(profile.json())"""
 
             report_file_path=self.data_validation_config.report_file_path
             report_dir=os.path.dirname(report_file_path)
