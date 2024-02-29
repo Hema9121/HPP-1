@@ -18,7 +18,7 @@ model_selection:
     class: RandomForestRegressor
     module: sklearn.ensemble
     params:
-      min_samples_leaf: 5
+      min_samples_leaf: 6
     search_param_grid:
       min_samples_leaf:
       - 6
